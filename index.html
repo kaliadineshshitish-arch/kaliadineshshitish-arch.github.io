@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dinesh Kalia — Web &amp; App Developer</title>
+<meta name="description" content="I build fast, modern websites and Progressive Web Apps (PWA) for small businesses in India. Affordable, mobile-friendly, delivered on time.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%236d28d9'/><text x='50' y='68' font-size='54' text-anchor='middle' fill='white' font-family='Arial'>D</text></svg>">
+<style>
+:root{
+  --ink:#0f172a; --muted:#64748b; --line:#e8e6f0; --soft:#f8f7fc;
+  --accent:#6d28d9; --accent2:#4f46e5; --wa:#1eb955;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  color:var(--ink);background:#fff;line-height:1.65;-webkit-font-smoothing:antialiased}
+.wrap{max-width:860px;margin:0 auto;padding:0 22px}
+a{color:inherit}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:14px 24px;border-radius:14px;
+  font-weight:700;font-size:15px;text-decoration:none;transition:.18s;border:2px solid transparent}
+.btn-wa{background:var(--wa);color:#fff;box-shadow:0 8px 22px rgba(30,185,85,.28)}
+.btn-wa:hover{transform:translateY(-2px)}
+.btn-out{background:rgba(255,255,255,.08);color:#fff;border-color:rgba(255,255,255,.35)}
+.btn-out:hover{background:rgba(255,255,255,.16)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{transform:translateY(-2px)}
+
+/* hero */
+header{background:linear-gradient(150deg,#1e1b4b 0%,#4c1d95 55%,#6d28d9 100%);color:#fff;
+  padding:64px 0 56px;position:relative;overflow:hidden}
+header::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;
+  background:rgba(255,255,255,.07);top:-160px;right:-120px}
+header::before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;
+  background:rgba(255,255,255,.05);bottom:-130px;left:-70px}
+.hero{position:relative;z-index:2}
+.pill{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  background:rgba(255,255,255,.16);padding:7px 14px;border-radius:999px;margin-bottom:20px}
+h1{font-size:42px;line-height:1.1;margin:0 0 12px;letter-spacing:-.02em}
+h1 span{display:block;font-size:20px;font-weight:600;color:#d8ccff;letter-spacing:0;margin-top:10px}
+.lead{font-size:17px;color:#e5dcff;max-width:600px;margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+
+/* sections */
+section{padding:52px 0;border-bottom:1px solid var(--line)}
+section:last-of-type{border-bottom:0}
+h2{font-size:24px;margin:0 0 8px;letter-spacing:-.01em}
+.sub{color:var(--muted);margin:0 0 26px;font-size:15px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.card{border:1px solid var(--line);border-radius:16px;padding:20px;background:#fff}
+.card h3{margin:0 0 6px;font-size:16px}
+.card p{margin:0;color:var(--muted);font-size:14px}
+.ico{width:38px;height:38px;border-radius:11px;background:var(--soft);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:12px}
+
+/* project */
+.proj{border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}
+.proj-top{background:linear-gradient(135deg,#f5f3ff,#ede9fe);padding:26px 22px;border-bottom:1px solid var(--line)}
+.proj-top h3{margin:0 0 4px;font-size:19px}
+.proj-top p{margin:0;color:#5b21b6;font-size:13.5px;font-weight:600}
+.proj-body{padding:20px 22px}
+.proj-body p{margin:0 0 16px;color:#334155;font-size:14.5px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
+.tag{font-size:12px;background:var(--soft);color:#4c1d95;padding:5px 11px;border-radius:999px;font-weight:600}
+.stack{display:grid;gap:16px}
+
+/* why */
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.why div{font-size:14.5px;color:#334155}
+.why b{display:block;color:var(--ink);font-size:15px;margin-bottom:3px}
+
+/* contact */
+.contact{background:var(--ink);color:#fff;border-radius:22px;padding:34px 26px;text-align:center}
+.contact h2{color:#fff;font-size:24px;margin-bottom:8px}
+.contact p{color:#cbd5e1;margin:0 0 24px;font-size:15px}
+.contact .cta{justify-content:center}
+footer{padding:34px 0 44px;text-align:center;color:var(--muted);font-size:13px}
+
+@media(max-width:560px){
+  h1{font-size:33px} h1 span{font-size:17px}
+  .lead{font-size:15.5px}
+  header{padding:48px 0 42px}
+  .btn{width:100%;justify-content:center}
+  section{padding:42px 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hero">
+    <span class="pill">Available for work</span>
+    <h1>Dinesh Kalia <span>Web &amp; App Developer</span></h1>
+    <p class="lead">I build <b>fast, modern websites</b> and <b>Progressive Web Apps (PWA)</b> for small businesses in India — mobile-friendly, Google-ready, and delivered on time.</p>
+    <div class="cta">
+      <a class="btn btn-wa" href="https://wa.me/919779882240?text=Hi%20Dinesh%2C%20I%20need%20a%20website" target="_blank" rel="noopener">WhatsApp par baat karein</a>
+      <a class="btn btn-out" href="mailto:kaliadineshshitish@gmail.com?subject=Website%20enquiry">Email bhejein</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Main kya banata hoon</h2>
+    <p class="sub">Simple kaam, seedha rate, time par delivery.</p>
+    <div class="grid">
+      <div class="card"><div class="ico">&#128187;</div><h3>Business Website</h3><p>Landing page ya 3-5 page ki website — mobile par badhiya dikhti hai.</p></div>
+      <div class="card"><div class="ico">&#128241;</div><h3>Mobile App (PWA)</h3><p>Website ko app bana deta hoon — phone par install hoti hai, offline chalti hai.</p></div>
+      <div class="card"><div class="ico">&#128269;</div><h3>Google par laana</h3><p>SEO basics + Google Business setup, taaki log aapko dhoondh sakein.</p></div>
+      <div class="card"><div class="ico">&#128176;</div><h3>Payment Integration</h3><p>UPI / card payment website par — Cashfree ya Razorpay ke saath.</p></div>
+      <div class="card"><div class="ico">&#128276;</div><h3>Notifications &amp; Forms</h3><p>WhatsApp button, contact form, push notifications.</p></div>
+      <div class="card"><div class="ico">&#128295;</div><h3>Bug Fixing</h3><p>Website kharab ho gayi? Button kaam nahi kar raha? Theek kar deta hoon.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Mera kaam</h2>
+    <p class="sub">Asli projects — aap khud kholkar dekh sakte hain.</p>
+    <div class="stack">
+      <div class="proj">
+        <div class="proj-top">
+          <h3>Maasathi — Pregnancy Tracker</h3>
+          <p>12 Indian languages &#183; Offline &#183; Push notifications</p>
+        </div>
+        <div class="proj-body">
+          <p>Ek poori web app jo phone par install hoti hai aur bina internet bhi chalti hai. Isme pregnancy tracker, medicine aur appointment reminders, doctor report (PDF), app lock aur payment integration hai — sab kuch, 12 bhashaon mein.</p>
+          <div class="tags">
+            <span class="tag">PWA</span><span class="tag">12 languages</span><span class="tag">Offline</span>
+            <span class="tag">Push notifications</span><span class="tag">Payments</span><span class="tag">PDF report</span>
+          </div>
+          <a class="btn btn-dark" href="https://kaliadineshshitish-arch.github.io/maasathi/" target="_blank" rel="noopener">Live app dekhein &#8594;</a>
+        </div>
+      </div>
+
+      <div class="proj">
+        <div class="proj-top">
+          <h3>CreatorMarket</h3>
+          <p>Marketplace + creator tools website</p>
+        </div>
+        <div class="proj-body">
+          <p>Ek marketplace website jisme creators apne kaam showcase karte hain — modern design, fast loading, mobile-first.</p>
+          <div class="tags"><span class="tag">Website</span><span class="tag">Marketplace</span><span class="tag">Responsive</span></div>
+          <a class="btn btn-dark" href="https://creatormarket-nu.vercel.app" target="_blank" rel="noopener">Website dekhein &#8594;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Kyun mujhse banwayein</h2>
+    <p class="sub">Aapko sirf kaam chahiye — bhaag-daud nahi.</p>
+    <div class="why">
+      <div><b>Jaldi reply</b> WhatsApp par message karein — kuch hi ghanton mein jawab milega.</div>
+      <div><b>Fixed rate</b> Kaam shuru karne se pehle poora rate — koi chhupa kharcha nahi.</div>
+      <div><b>Time par delivery</b> Deadline se pehle kaam, aur delivery ke baad support.</div>
+      <div><b>Simple bhasha</b> Technical baat aasaan Hindi mein — aapko kuch seekhna nahi padega.</div>
+    </div>
+  </div>
+</section>
+
+<section style="border-bottom:0">
+  <div class="wrap">
+    <div class="contact">
+      <h2>Aapko website chahiye?</h2>
+      <p>WhatsApp par message karein — free mein bata dunga kitna time aur kitna kharcha lagega.</p>
+      <div class="cta">
+        <a class="btn btn-wa" href="https://wa.me/919779882240?text=Hi%20Dinesh%2C%20mujhe%20website%20banwani%20hai" target="_blank" rel="noopener">WhatsApp karein</a>
+        <a class="btn btn-out" href="mailto:kaliadineshshitish@gmail.com">Email karein</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Dinesh Kalia &#183; Web &amp; App Developer &#183; Amritsar, Punjab, India</div>
+</footer>
+
+</body>
+</html>
