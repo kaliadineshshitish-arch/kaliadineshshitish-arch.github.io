@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proposal Tool — Dinesh Kalia</title>
+<meta name="description" content="Business ko WhatsApp proposal bhejne ka tool.">
+<style>
+:root{--ink:#0f172a;--muted:#64748b;--line:#e8e6f0;--soft:#f8f7fc;--accent:#6d28d9;--wa:#1eb955}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  color:var(--ink);background:#f4f2fa;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:640px;margin:0 auto;padding:22px 18px 60px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+.top h1{font-size:20px;margin:0}
+.top a{font-size:13px;color:var(--accent);text-decoration:none;font-weight:600}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:16px}
+label{display:block;font-size:13px;font-weight:700;margin:0 0 6px}
+input,select,textarea{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:12px;
+  font-size:15px;font-family:inherit;color:var(--ink);background:#fff;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--accent)}
+.row{margin-bottom:14px}
+.hint{font-size:12px;color:var(--muted);margin:6px 0 0}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:15px;
+  border-radius:14px;font-weight:700;font-size:15px;border:0;cursor:pointer;font-family:inherit;
+  text-decoration:none;transition:.15s;margin-top:10px}
+.btn-p{background:var(--accent);color:#fff}
+.btn-wa{background:var(--wa);color:#fff}
+.btn-o{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+.btn:active{transform:scale(.985)}
+textarea{min-height:230px;line-height:1.6;font-size:14.5px}
+.tip{font-size:12.5px;color:#6b7280;margin-top:10px}
+.steps{font-size:13.5px;color:#475569;margin:0;padding-left:20px}
+.steps li{margin-bottom:5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <h1>📩 Proposal Tool</h1>
+    <a href="https://kaliadineshshitish-arch.github.io/">← Portfolio</a>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <label for="biz">Business ka naam</label>
+      <input id="biz" placeholder="jaise: Sharma Clinic" autocomplete="off">
+    </div>
+    <div class="row">
+      <label for="type">Business ka type</label>
+      <select id="type">
+        <option value="clinic">Clinic / Doctor / Hospital</option>
+        <option value="boutique">Boutique / Kapde ki shop</option>
+        <option value="coaching">Coaching / Tuition centre</option>
+        <option value="restaurant">Restaurant / Dhaba / Cafe</option>
+        <option value="gym">Gym / Fitness centre</option>
+        <option value="salon">Salon / Beauty parlour</option>
+        <option value="school">School / Play school</option>
+        <option value="shop">General shop / Store</option>
+      </select>
+    </div>
+    <div class="row">
+      <label for="phone">Unka WhatsApp number</label>
+      <input id="phone" placeholder="10 digit — jaise 9876543210" inputmode="numeric" autocomplete="off">
+      <p class="hint">Google Maps par number milta hai. Country code apne aap lag jaayega (+91).</p>
+    </div>
+    <button class="btn btn-p" onclick="make()">Proposal banao</button>
+  </div>
+
+  <div class="card" id="outCard" style="display:none">
+    <label for="msg">Aapka proposal (edit kar sakte hain)</label>
+    <textarea id="msg"></textarea>
+    <button class="btn btn-o" onclick="copyMsg()" id="copyBtn">📋 Copy karein</button>
+    <a class="btn btn-wa" id="waBtn" target="_blank" rel="noopener">🟢 WhatsApp par bhejein</a>
+    <p class="tip">WhatsApp khulega — message pehle se bhara hoga. Bas <b>send</b> dabayein.</p>
+  </div>
+
+  <div class="card">
+    <label style="margin-bottom:10px">Roz ka kaam</label>
+    <ol class="steps">
+      <li>Google Maps kholein → <b>"clinic Amritsar"</b> search karein</li>
+      <li>Number note karein</li>
+      <li>Yahan daalein → <b>Proposal banao</b></li>
+      <li><b>WhatsApp par bhejein</b> dabayein → send</li>
+      <li><b>Roz 10</b> bhejein — 2-3 hafte mein pehla client 💰</li>
+    </ol>
+  </div>
+
+</div>
+
+<script>
+var PORTFOLIO = "https://kaliadineshshitish-arch.github.io/";
+
+var T = {
+  clinic: {
+    who: "Patients",
+    want: "appointment / WhatsApp button",
+    why: "Patients aapko online dhoondh nahi paate — sirf unhi ko pata hai jo pehle se aate hain."
+  },
+  boutique: {
+    who: "Customers",
+    want: "photos + WhatsApp order button",
+    why: "Log online kapde dhoondhte hain — aapki shop Google par nahi dikhti."
+  },
+  coaching: {
+    who: "Students",
+    want: "admission form + WhatsApp enquiry",
+    why: "Naye students online dhoondhte hain — website ke bina woh aapko miss kar dete hain."
+  },
+  restaurant: {
+    who: "Customers",
+    want: "menu + photos + Google Maps location",
+    why: "Log 'restaurant near me' search karte hain — aap list mein nahi aate."
+  },
+  gym: {
+    who: "Members",
+    want: "membership details + WhatsApp enquiry",
+    why: "Naye members online dhoondhte hain — website nahi hai to woh doosre gym chale jaate hain."
+  },
+  salon: {
+    who: "Customers",
+    want: "rate list + appointment booking",
+    why: "Log 'salon near me' search karte hain — aapki shop nahi dikhti."
+  },
+  school: {
+    who: "Parents",
+    want: "admission details + enquiry form",
+    why: "Parents online dhoondhte hain — website ke bina bharosa nahi banta."
+  },
+  shop: {
+    who: "Customers",
+    want: "products + WhatsApp order button",
+    why: "Log online dhoondhte hain — aap Google par nahi dikhte."
+  }
+};
+
+function make(){
+  var biz = (document.getElementById('biz').value || '').trim();
+  var type = document.getElementById('type').value;
+  var phone = (document.getElementById('phone').value || '').replace(/\D/g,'');
+  var t = T[type];
+  var name = biz || "aapki shop";
+
+  var msg =
+"Namaste! Main Dinesh Kalia, Amritsar se web developer.\n\n" +
+"Maine dekha " + name + " ki website nahi hai — Google par bhi nahi dikh rahi. " + t.why + "\n\n" +
+"Main aapke liye yeh bana sakta hoon:\n" +
+"• 3-page website (Home, About, Contact)\n" +
+"• Mobile par badhiya dikhegi\n" +
+"• Google par aayegi\n" +
+"• " + t.want + "\n" +
+"• 3 din mein taiyaar\n\n" +
+"Rate: Rs 3,000 (fixed — koi chhupa kharcha nahi)\n\n" +
+"Mera kaam dekhein:\n" + PORTFOLIO + "\n\n" +
+"Pasand aaye to reply kar dein — main aaj hi shuru kar dunga 🙂";
+
+  document.getElementById('msg').value = msg;
+  document.getElementById('outCard').style.display = 'block';
+
+  if (phone.length === 10) {
+    document.getElementById('waBtn').href =
+      "https://wa.me/91" + phone + "?text=" + encodeURIComponent(msg);
+  } else {
+    document.getElementById('waBtn').href =
+      "https://wa.me/" + encodeURIComponent(msg);
+  }
+  document.getElementById('outCard').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function copyMsg(){
+  var ta = document.getElementById('msg');
+  ta.select(); ta.setSelectionRange(0, 99999);
+  try { document.execCommand('copy'); } catch(e){}
+  if (navigator.clipboard) { navigator.clipboard.writeText(ta.value).catch(function(){}); }
+  var b = document.getElementById('copyBtn');
+  b.textContent = "✅ Copy ho gaya!";
+  setTimeout(function(){ b.textContent = "📋 Copy karein"; }, 1600);
+}
+</script>
+</body>
+</html>
