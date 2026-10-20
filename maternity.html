@@ -57,7 +57,7 @@ function msgFor(name){
  "Aap apni patients ko bilkul FREE recommend kar sakte hain.\n"+
  "Chahein to app mein "+name+" ka naam bhi laga sakte hain.\n\n"+
  "2 minute mein dekhein:\n"+APP+"\n\n"+
- "Koi sawaal ho to bataiye 🙂";
+ "Koi sawaal ho to bataiye 🙂" + "\n\n— Dinesh Kalia\nWeb & App Developer, Amritsar\n📞 7888607326 (WhatsApp)";
 }
 var saved={}; try{ saved=JSON.parse(localStorage.getItem('matnums')||'{}'); }catch(e){}
 function render(){
@@ -73,7 +73,7 @@ function render(){
     out.push('<div class="card"><span class="badge">'+esc(r.t)+'</span><h3>'+esc(r.n)+'</h3>'+
       '<p class="meta">📍 '+esc(r.d)+', Punjab</p><p class="addr">'+esc(r.a)+'</p>'+
       '<div class="row"><a class="btn g" target="_blank" rel="noopener" href="'+gm+'">🔍 Google Maps</a></div>'+
-      '<input class="num" inputmode="numeric" placeholder="Unka WhatsApp number (10 digit)" value="'+(saved[key]||'')+'">'+
+      '<input class="num" inputmode="numeric" placeholder="Hospital ka WhatsApp number (10 digit)" value="'+(saved[key]||'')+'">'+
       '<div class="row"><a class="btn w" target="_blank" rel="noopener">🟢 WhatsApp bhejein</a></div></div>');
   }
   document.getElementById('list').innerHTML=out.join('');

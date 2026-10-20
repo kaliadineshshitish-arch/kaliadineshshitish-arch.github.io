@@ -73,7 +73,7 @@ function msgFor(name){
   "• 3-4 din mein taiyaar\n\n" +
   "Rate: Rs 3,000 (fixed — koi chhupa kharcha nahi)\n\n" +
   "Mera kaam dekhein:\n" + PORT + "\n\n" +
-  "Pasand aaye to reply kar dein 🙂";
+  "Pasand aaye to reply kar dein 🙂" + "\n\n— Dinesh Kalia\nWeb & App Developer, Amritsar\n📞 7888607326 (WhatsApp)";
 }
 
 var saved = {};
@@ -97,7 +97,7 @@ function render(){
       '<p class="meta">📍 '+esc(r.d)+', Punjab</p>'+
       '<p class="addr">'+esc(r.a)+'</p>'+
       '<div class="row"><a class="btn g" target="_blank" rel="noopener" href="'+gm+'">🔍 Google Maps</a></div>'+
-      '<input class="num" inputmode="numeric" placeholder="Unka WhatsApp number (10 digit)" value="'+(saved[key]||'')+'" '+
+      '<input class="num" inputmode="numeric" placeholder="Hospital ka WhatsApp number (10 digit)" value="'+(saved[key]||'')+'" '+
         'oninput="saveNum(this,\''+key.replace(/'/g,"\\'")+'\')">'+
       '<div class="row"><a class="btn w" id="wa'+i+'" target="_blank" rel="noopener">🟢 WhatsApp bhejein</a></div>'+
       '</div>');
